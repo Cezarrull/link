@@ -7,9 +7,118 @@
 :root {
     --black: #000000;
     --white: #ffffff;
-    
+    --orange: #ff4500;
+    --green: #3d801f;
+    --yellow: #ffbb00;
+    --blue: #1158ff;
+
+    --backgroundOne: #eccea4;
 }
 
 .bodyHome {
+    display: flex;
+    justify-content: space-around;
     height: 100vh;
+    background-color: var(--backgroundOne);
+}
+
+.itemOne {
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
+
+.mainHome {
+    border: 1px solid blue;
+    height: 100%;
+    width: 100%;
+}
+
+.itemTwo {
+    border: 1px solid green;
+    height: 100%;
+    width: 100%;
+}
+
+.ballOne {
+    height: 350px;
+    width: 300px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 25%;
+    background: var(--orange);
+    top: 0;
+    left: 0;
+    animation: ballOne 2.2s;
+}
+
+.ballTwo {
+    height: 350px;
+    width: 300px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 25%;
+    background: var(--green);
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    animation: ballTwo 2.2s;
+}
+
+.ballSmallOne {
+    height: 250px;
+    width: 230px;
+    background: var(--yellow);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 25%;
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    animation: ballSmallOne 2.2s;
+}
+
+.ballSmallTwo {
+    height: 250px;
+    width: 230px;
+    background: var(--blue);
+    border-top-right-radius: 25%;
+    border-top-left-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 12.5%;
+    animation: ballSmallTwo 2.2s;
+}
+
+@keyframes ballOne {
+    0% {
+        transform: translateX(-280px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes ballTwo {
+    0% {
+        transform: translateX(280px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes ballSmallOne {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes ballSmallTwo {
+    0% {
+        transform: translateY(200px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
