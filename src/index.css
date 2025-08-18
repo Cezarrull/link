@@ -2,40 +2,49 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 :root {
     --black: #000000;
     --white: #ffffff;
-    --orange: #ff4500;
-    --green: #3d801f;
-    --yellow: #ffbb00;
-    --blue: #1158ff;
 
-    --backgroundOne: #eccea4;
+    --shadow: #00000050;
+
+    --blueOne: #53a08e;
+    --blueTwo: #7ebea3;
+    --blueThree: #a9cba6;
+    --whiteOne: #e0dba4;
+    --whiteTwo: #f7f0ba;
+
+    --blueOneNight: #001b1b;
+    --blueTwoNight: #0c2a2a;
+    --blueThreeNight: #193939;
+    --whiteOneNight: #254747;
+    --whiteTwoNight: #315656;
 }
-
+/*////////////////// DAY ////////////////////*/
 .bodyHome {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100vh;
-    background-color: var(--backgroundOne);
+    background: var(--whiteOne);
 }
 
 .itemOne {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     height: 100%;
     width: 100%;
 }
 
 .mainHome {
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     height: 100%;
     width: 100%;
 }
 
 .itemTwo {
-    border: 1px solid green;
+    /*border: 1px solid green;*/
     height: 100%;
     width: 100%;
 }
@@ -45,7 +54,7 @@
     width: 300px;
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 25%;
-    background: var(--orange);
+    background: var(--blueOne);
     top: 0;
     left: 0;
     animation: ballOne 2.2s;
@@ -56,7 +65,7 @@
     width: 300px;
     border-top-left-radius: 50%;
     border-top-right-radius: 25%;
-    background: var(--green);
+    background: var(--blueOne);
     bottom: 0;
     right: 0;
     position: fixed;
@@ -66,25 +75,320 @@
 .ballSmallOne {
     height: 250px;
     width: 230px;
-    background: var(--yellow);
+    background: var(--blueTwo);
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 25%;
     position: absolute;
     top: 0;
-    left: 12.5%;
+    left: 180px;
     animation: ballSmallOne 2.2s;
 }
 
 .ballSmallTwo {
     height: 250px;
     width: 230px;
-    background: var(--blue);
+    background: var(--blueTwo);
     border-top-right-radius: 25%;
     border-top-left-radius: 50%;
     position: absolute;
     bottom: 0;
-    right: 12.5%;
+    right: 180px;
     animation: ballSmallTwo 2.2s;
+}
+
+.circleOne {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 360px;
+    border-radius: 50%;
+    background: var(--blueThree);
+    animation: circleOne 1.8s;
+}
+
+.circleTwo {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+    right: 360px;
+    background: var(--blueThree);
+    animation: circleTwo 1.8s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.content {
+    height: 60vh;
+    width: 45vh;
+    border-radius: 16px;
+    background: var(--whiteTwo);
+    box-shadow: 10px 10px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.content img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.content h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--blueOne);
+}
+
+.content ul {
+    height: max-content;
+    width: 100%;
+}
+
+.content ul li {
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blueTwo);
+}
+
+.content ul li:hover {
+    background: var(--blueThree);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.content ul li a:hover {
+    color: var(--blueOne);
+    transition: 0.2s;
+}
+
+.content ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--whiteTwo);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+
+.buttonDay {
+    display: flex;
+    width: 50px;
+    height: 22px;
+    border-radius: 50px;
+    margin-top: 10px;
+    justify-content: space-between;
+    background: var(--whiteOne);
+    position: relative;
+    border: none;
+}
+
+
+.sun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--blueTwo);
+    position: absolute;
+    left: 0;
+    animation: slide-back 0.4s;
+    color: var(--black);
+    }
+
+.moon {
+    display: none;
+}
+
+/*////////////////// NIGHT ////////////////////*/
+.bodyHomeNight {
+    background: var(--whiteOneNight);
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.contentNight {
+    height: 60vh;
+    width: 45vh;
+    border-radius: 16px;
+    background: var(--whiteTwoNight);
+    box-shadow: 10px 10px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contentNight img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.contentNight h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--blueOneNight);
+}
+
+.contentNight ul {
+    height: max-content;
+    width: 100%;
+}
+
+.contentNight ul li {
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blueTwoNight);
+}
+
+.contentNight ul li:hover {
+    background: var(--blueThreeNight);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.contentNight ul li a:hover {
+    color: var(--blueOneNight);
+    transition: 0.2s;
+}
+
+.contentNight ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--whiteTwoNight);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+
+.ballOneNight {
+    height: 350px;
+    width: 300px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 25%;
+    background: var(--blueOneNight);
+    top: 0;
+    left: 0;
+    animation: ballOne 2.2s;
+}
+
+.ballTwoNight {
+    height: 350px;
+    width: 300px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 25%;
+    background: var(--blueOneNight);
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    animation: ballTwo 2.2s;
+}
+
+.ballSmallOneNight {
+    height: 250px;
+    width: 230px;
+    background: var(--blueTwoNight);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 25%;
+    position: absolute;
+    top: 0;
+    left: 180px;
+    animation: ballSmallOne 2.2s;
+}
+
+.ballSmallTwoNight {
+    height: 250px;
+    width: 230px;
+    background: var(--blueTwoNight);
+    border-top-right-radius: 25%;
+    border-top-left-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 180px;
+    animation: ballSmallTwo 2.2s;
+}
+
+.circleOneNight {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 360px;
+    border-radius: 50%;
+    background: var(--blueThreeNight);
+    animation: circleOne 1.8s;
+}
+
+.circleTwoNight {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+    right: 360px;
+    background: var(--blueThreeNight);
+    animation: circleTwo 1.8s;
+}
+
+.buttonNight {
+    display: flex;
+    width: 50px;
+    height: 22px;
+    border-radius: 50px;
+    margin-top: 10px;
+    justify-content: space-between;
+    background: var(--whiteOneNight);
+    position: relative;
+    border: none;
+}
+
+.buttonNight .moon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blueTwoNight);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    animation: slide-in 0.4s;
+    color: var(--white);
+}
+
+.buttonNight .sun {
+    display: none;
 }
 
 @keyframes ballOne {
@@ -120,5 +424,78 @@
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes circleOne {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes circleTwo {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left:0
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .bodyHome {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ballOne, .ballTwo {
+        display: none;
+    }
+
+    .ballSmallOne {
+        height: 200px;
+        width: 180px;
+        left: 0;
+    }
+
+    .ballSmallTwo {
+        height: 200px;
+        width: 180px;
+        right: 0;
+    }
+
+    .circleOne {
+        left: 140px;
+    }
+    
+    .circleTwo {
+        right: 140px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .mainHome {
+        width: 60rem;
     }
 }
