@@ -1,5 +1,5 @@
-import { MoonStars } from '@phosphor-icons/react'
-import { SunDim } from '@phosphor-icons/react'
+import MoonStars from '@phosphor-icons/react'
+import SunDim from '@phosphor-icons/react'
 import { useState } from 'react'
 
 export function Home({toggleNightMode}) {
