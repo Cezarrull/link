@@ -2,6 +2,7 @@ import { MoonStars } from '@phosphor-icons/react'
 import { SunDim } from '@phosphor-icons/react'
 
 import { useState } from 'react'
+import fotoPerfil from '../assets/cezar.png'
 
 export function Home({toggleNightMode}) {
     const [activeNight, setActiveNight] = useState(true);
@@ -22,7 +23,7 @@ export function Home({toggleNightMode}) {
             <div className="mainHome">
                 <div className="container">
                     <div className={activeNight ? "content" : "contentNight"}>
-                        <img src="../src/assets/cezar.png" alt="" />
+                        <img src={fotoPerfil} alt="" />
                         <h1>CEZAR RULL</h1>
                         <ul>
                             <li>
